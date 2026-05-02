@@ -14,7 +14,7 @@ O projeto foi organizado seguindo um modelo de pipeline ETL (Extract, Transform,
 ```bash
 analise-acoes/
 │
-├── data/               # Dados gerados (CSV e banco SQLite)
+├── data/               
 │   ├── precos_acoes.csv
 │   ├── retornos_acoes.csv
 │   └── acoes.db
