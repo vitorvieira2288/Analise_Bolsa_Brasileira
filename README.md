@@ -163,7 +163,7 @@ Para maior interação, foi criado um dashboard simples contendo o retorno médi
 
 ```bash
 git clone https://github.com/vitorvieira2288/Analise_Bolsa_Brasileira.git
-cd analise-acoes
+
 ```
 
 2. Instale as dependências
