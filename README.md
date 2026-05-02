@@ -162,7 +162,7 @@ Para maior interação, foi criado um dashboard simples contendo o retorno médi
 1. Clone o repositório
 
 ```bash
-git clone <seu-repo>
+git clone https://github.com/vitorvieira2288/Analise_Bolsa_Brasileira.git
 cd analise-acoes
 ```
 
