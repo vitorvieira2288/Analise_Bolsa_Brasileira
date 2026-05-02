@@ -20,11 +20,11 @@ analise-acoes/
 │   └── acoes.db
 │
 ├── src/
-│   ├── extract.py      # Coleta de dados
-│   ├── transform.py    # Tratamento e cálculo de métricas
-│   ├── load.py         # Persistência em banco de dados
-│   ├── queries.py      # Consultas SQL
-│   └── main.py         # Orquestração do pipeline
+│   ├── extract.py      
+│   ├── transform.py    
+│   ├── load.py         
+│   ├── queries.py     
+│   └── main.py         
 │
 ├── graficos-dashboard/
 │   ├── acoes.pbix
