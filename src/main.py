@@ -10,40 +10,26 @@ from src.queries import buscar_altos_retornos, calcular_correlacao
 def executar_pipeline():
     tickers = ["PETR4.SA", "VALE3.SA", "ITUB4.SA"]
 
-    # ======================
-    # EXTRAÇÃO
-    # ======================
+    
     dados = obter_dados(tickers)
 
-    # ======================
-    # INSPEÇÃO
-    # ======================
+    
     inspecionar_dados(dados)
 
-    # ======================
-    # TRANSFORMAÇÃO
-    # ======================
+    
     retornos = calcular_retornos(dados)
 
-    # ======================
-    # GARANTIR PASTA DATA
-    # ======================
+    
     os.makedirs("data", exist_ok=True)
 
-    # ======================
-    # SALVAR CSV
-    # ======================
+   
     dados.to_csv("data/precos_acoes.csv")
     retornos.to_csv("data/retornos_acoes.csv")
 
-    # ======================
-    # BANCO DE DADOS
-    # ======================
+  
     salvar_no_banco(dados, retornos)
 
-    # ======================
-    # MÉTRICAS
-    # ======================
+   
     
     print("\nRetorno médio:")
     print(retornos.mean())
@@ -54,18 +40,14 @@ def executar_pipeline():
     print("\nCorrelação:")
     print(retornos.corr())
 
-    # ======================
-    # VISUALIZAÇÃO
-    # ======================
+  
     dados.plot(title="Preço das Ações", figsize=(10,5))
     plt.show()
 
     retornos.cumsum().plot(title="Retorno Acumulado", figsize=(10,5))
     plt.show()
 
-    # ======================
-    # CARTEIRA
-    # ======================
+   
     pesos = [0.33, 0.33, 0.34]
     carteira = (retornos * pesos).sum(axis=1)
     carteira.name = "Carteira"
@@ -73,9 +55,7 @@ def executar_pipeline():
     carteira.cumsum().plot(title="Retorno da Carteira", figsize=(10,5))
     plt.show()
 
-    # ======================
-    # CONSULTAS SQL
-    # ======================
+    
     print("\nDias com alto retorno da PETR4:")
     print(buscar_altos_retornos().head())
 
